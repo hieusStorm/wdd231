@@ -142,6 +142,10 @@ footer {
         justify-content: space-evenly;
     }
 
+    section span {
+        display: inherit;
+    }
+
     section:last-child {
         flex: 100%;
     }
