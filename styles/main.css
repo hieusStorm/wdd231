@@ -1,5 +1,7 @@
 * {
     font-family: 'Robto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 #navMenu::before {
@@ -38,9 +40,17 @@ footer {
     background-color: #28802c;
     color: #fff;
     text-align: center;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 nav {
+    flex: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
