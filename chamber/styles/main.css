@@ -1,0 +1,89 @@
+:root {
+    --primary-color: #bd7120;
+    --secondary-color: #313130;
+    --background-color: #FFF;
+    --text-primary-color: #000;
+    --text-secondary-color: #FFF;
+    --font-family: 'Roboto', sans-serif;
+}
+
+* {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    color: var(--text-primary-color);
+}
+
+#navButton {
+    background: none;
+    border: none;
+    transition: 1s;
+    font-size: 3rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+#navButton::before {
+    content: "☰";
+}
+
+#navButton:hover {
+    cursor: pointer;
+}
+
+.open #navButton::before {
+    content: "X";
+}
+
+.open a {
+    display: block;
+}
+
+header,
+footer {
+    width: 100%;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+nav {
+    flex: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+nav a {
+    text-decoration: none;
+    margin: 1rem;
+    padding: 1rem;
+    display: none;
+}
+
+#current {
+    text-decoration: underline;
+}
+
+main {
+    width: 75%;
+}
+
+@media screen and (min-width: 500px) {
+    #navButton {
+        display: none;
+    }
+
+    nav {
+        flex-direction: row;
+        background-color: var(--secondary-color);
+    }
+
+    nav a {
+        display: block;
+        border-radius: 1rem;
+        color: var(--text-secondary-color);
+    }
+}
