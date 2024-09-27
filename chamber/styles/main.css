@@ -87,5 +87,11 @@ main {
     nav a {
         display: block;
         border-radius: 1rem;
+        transition: 500ms;
+    }
+    
+    nav a:hover {
+        background-color: var(--secondary-color);
+        color: var(--text-secondary-color);
     }
 }
