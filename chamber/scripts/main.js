@@ -16,7 +16,7 @@ async function retrieveMembers() {
 retrieveMembers();
 
 const displayMembers = (members) => {
-    const main = document.querySelector("main");
+    const gridArea = document.querySelector("main div");
     members.forEach(member => {
         const section = document.createElement("section");
         const img = document.createElement("img");
@@ -39,6 +39,6 @@ const displayMembers = (members) => {
         section.appendChild(numberTag);
         section.appendChild(memberUrl);
 
-        main.appendChild(section);
+        gridArea.appendChild(section);
     });
 }
