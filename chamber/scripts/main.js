@@ -8,17 +8,17 @@ navButton.addEventListener("click", () => {
 });
 
 //retrieve & display member data
-async function retrieveMembers() {
+async function retrieveMembers(type) {
     let response = await fetch("https://hieusstorm.github.io/wdd231/chamber/data/members.json");
     let data = await response.json();
-    displayMembers(data.members, "grid");
-    return data.members;
+    displayMembers(data.members, type);
 }
 
-const memberData = retrieveMembers();
+retrieveMembers("grid");
 
 const displayMembers = (members, type) => {
     const memberArea = document.querySelector("#memberArea");
+    memberArea.innerHTML = "";
     if (type == "grid") {
         members.forEach(member => {
             const section = document.createElement("section");
@@ -71,6 +71,8 @@ const displayMembers = (members, type) => {
 
             table.appendChild(tr);
         });
+
+        memberArea.appendChild(table);
     }
 }
 
@@ -78,5 +80,5 @@ const displayMembers = (members, type) => {
 const gridButton = document.querySelector("#grid");
 const listButton = document.querySelector("#list");
 
-gridButton.addEventListener("click", displayMembers(memberData, "grid"));
-listButton.addEventListener("click", displayMembers(memberData, "list"));
+gridButton.addEventListener("click", () => retrieveMembers("grid"));
+listButton.addEventListener("click", () => retrieveMembers("list"));
