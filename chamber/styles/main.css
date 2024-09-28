@@ -1,6 +1,6 @@
 :root {
     --primary-color: #bd7120;
-    --secondary-color: #313130;
+    --secondary-color: #4f4844;
     --background-color: #FFF;
     --text-primary-color: #000;
     --text-secondary-color: #FFF;
@@ -70,6 +70,7 @@ nav a {
     text-decoration: none;
     margin: 1rem;
     padding: 1rem;
+    text-align: center;
     display: none;
 }
 
@@ -110,6 +111,22 @@ main div button {
 main div button:hover {
     cursor: pointer;
     box-shadow: 0px 0px 1px 1px inset var(--secondary-color);
+}
+
+table {
+    border: none;
+}
+
+tr:nth-child(even) {
+    background-color: var(--secondary-color);
+}
+
+tr:nth-child(even) td, tr:nth-child(even) td a {
+    color: var(--text-secondary-color);
+}
+
+td {
+    padding: 1rem;
 }
 
 @media screen and (min-width: 500px) {
