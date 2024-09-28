@@ -22,8 +22,8 @@ const displayProphets = (prophets) => {
 };
 
 async function getProphetData() {
-    response = await fetch(url);
-    data = await response.json();
+    let response = await fetch(url);
+    let data = await response.json();
     //  console.table(data.prophets);
     displayProphets(data.prophets);
 }
