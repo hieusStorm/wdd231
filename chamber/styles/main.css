@@ -45,7 +45,7 @@ footer {
     width: 100%;
     background-color: var(--primary-color);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
@@ -79,6 +79,7 @@ nav a {
 
 main {
     text-align: center;
+    margin: 2rem auto;
 }
 
 #memberArea {
