@@ -1,0 +1,67 @@
+{
+    "members": [
+        {
+            "name": "Hot Air Expeditions",
+            "address": "702 W Deer Valley Rd, Phoenix, AZ 85027",
+            "phoneNumber": "(480)-502-6999",
+            "url": "https://book.peek.com/s/747cd959-ad84-4d9c-bedb-a9b80870ed89/1M7e?gaClientId=604166049.1592679375",
+            "imageName":"Hot Air Ballon",
+            "imgUrl":"https://lh5.googleusercontent.com/p/AF1QipNm7voB-iRwt0p7Ze3BQb1Zjv7vy2ZGZKYaHr6H=w408-h272-k-no",
+            "membershipLevel": 1
+        },
+        {
+            "name": "Pork on a Fork BBQ",
+            "address": "1515 W Deer Valley Rd, Phoenix, AZ 85027",
+            "phoneNumber": "(623)-434-1794",
+            "url": "https://www.porkonafork.com/",
+            "imageName": "Pork on a fork",
+            "imgUrl": "https://d1w7312wesee68.cloudfront.net/UBne7AZYr_1EYlhHE0cxhV0pFtbW_tqe5-6aeAmKxUI/ext:webp/quality:50/plain/s3://toast-sites-resources-prod/restaurantImages/491c0221-75d1-44f9-95d3-588531788276/POAFFLAME.png",
+            "membershipLevel": 2
+        },
+        {
+            "name": "Habanero Fresh Mexican Grill",
+            "address": "701 W Deer Valley Rd, Phoenix, AZ 85027",
+            "phoneNumber": "(623)-243-7449",
+            "url": "http://www.habanerofreshmex.com/",
+            "imageName": "Habenaro Mexican Grill",
+            "imgUrl": "https://lh5.googleusercontent.com/p/AF1QipMSv5stxK3nCiCBU1JbTXusKEkyArC0Qz-zd6oB=w408-h306-k-no",
+            "membershipLevel": 1
+        },
+        {
+            "name": "Da Valley Grill",
+            "address": "2040 W Deer Valley Rd suite a, Phoenix, AZ 85027",
+            "phoneNumber": "(480)-492-1116",
+            "url": "https://davalleygrillaz.com/",
+            "imageName": "Da Valley Grill",
+            "imgUrl": "https://img1.wsimg.com/isteam/ip/16fcd354-5e7b-4d60-be51-45560f8b34ca/logo/d38a0781-e8f6-4dc5-b03c-af965e981832.jpg/:/rs=w:360,h:80,cg:true,m/cr=w:360,h:80/qt=q:95",
+            "membershipLevel": 3
+        },
+        {
+            "name": "Deer Valley Tire Shop",
+            "address": "2050 W Deer Valley Rd, Phoenix, AZ 85027",
+            "phoneNumber": "(623)-466-6187",
+            "url": "https://www.facebook.com/deervalleytireshop/",
+            "imageName": "Deer Valley Tire",
+            "imgUrl": "https://scontent-phx1-1.xx.fbcdn.net/v/t39.30808-1/307713122_462303135916064_748382400980703894_n.jpg?stp=dst-jpg_s200x200&_nc_cat=103&ccb=1-7&_nc_sid=f4b9fd&_nc_ohc=K-GcMJBO90gQ7kNvgEzFTe2&_nc_ht=scontent-phx1-1.xx&oh=00_AYDrYVPbOzQ6Bsjve0gMJOdFQUvE6lgQ3pAP1vVoMjW-CA&oe=66FD0EED",
+            "membershipLevel": 3
+        },
+        {
+            "name": "Delizia Deli & Café",
+            "address": "21705 N 19th Ave #112, Phoenix, AZ 85027",
+            "phoneNumber": "(623)-581-3354",
+            "url": "https://www.deervalleydeli.com/",
+            "imageName": "Delizia Deli",
+            "imgUrl": "https://www.deervalleydeli.com/wp-content/uploads/2021/12/cropped-logo-wide-600.webp",
+            "membershipLevel": 2
+        },
+        {
+            "name": "Adobe Self Storage Solutions",
+            "address": "2818 W Deer Valley Rd, Phoenix, AZ 85027",
+            "phoneNumber": "(623)-738-1598",
+            "url": "https://www.storage-solutions.org/storage/arizona/storage-units-phoenix/2818-W-Deer-Valley-Rd-153?utm_source=google&utm_medium=local&utm_content=153&utm_campaign=localmaps",
+            "imageName": "Storage Garages",
+            "imgUrl": "https://www.storage-solutions.org/uploads/storage_solutions/global_settings/NdOjXxPy990SietYm4Bfs5gHWhTO20lo1ThcmCHV/1NoyAymWlWaNo4Zmpi39hxu1Pxo6yoZVTFhS3hdu.svg",
+            "membershipLevel": 1
+        }
+    ]
+}
