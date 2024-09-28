@@ -29,6 +29,7 @@ const displayMembers = (members) => {
 
             img.setAttribute("src", member.imgUrl);
             img.setAttribute("alt", member.imgName);
+            img.setAttribute("loading", "lazy");
 
             memberName.innerHTML = member.name;
             memberName.classList.add("memberName");
