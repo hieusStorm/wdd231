@@ -16,7 +16,7 @@ async function retrieveMembers() {
 retrieveMembers();
 
 const displayMembers = (members) => {
-    const gridArea = document.querySelector("main div");
+    const gridArea = document.querySelector("#memberArea");
     members.forEach(member => {
         const section = document.createElement("section");
         const img = document.createElement("img");

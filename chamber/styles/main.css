@@ -73,7 +73,7 @@ nav a {
     text-decoration: underline;
 }
 
-main div {
+#memberArea {
     margin: 1rem 1rem;
     display: grid;
     grid-template-columns: auto auto auto;
