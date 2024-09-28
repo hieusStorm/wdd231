@@ -7,10 +7,38 @@ navButton.addEventListener("click", () => {
     nav.classList.toggle("open");
 });
 
-//retrieve member data
+//retrieve & display member data
 async function retrieveMembers() {
-    let response = await fetch("../data/members.json");
+    let response = await fetch("https://hieusstorm.github.io/wdd231/chamber/data/members.json");
     let data = await response.json();
-    console.table(data);
+    displayMembers(data.members);
 }
 retrieveMembers();
+
+const displayMembers = (members) => {
+    const main = document.querySelector("main");
+    members.forEach(member => {
+        const section = document.createElement("section");
+        const img = document.createElement("img");
+        const addressTag = document.createElement("p");
+        const numberTag = document.createElement("p");
+        const memberUrl = document.createElement("a");
+
+        img.setAttribute("src", member.imgUrl);
+        img.setAttribute("alt", member.imgName);
+
+        addressTag.innerHTML = member.address;
+        numberTag.innerHTML = member.phoneNumber;
+
+        memberUrl.setAttribute("href", member.url);
+        memberUrl.setAttribute("target", "_blank");
+        memberUrl.innerText = member.url;
+
+        section.appendChild(img);
+        section.appendChild(addressTag);
+        section.appendChild(numberTag);
+        section.appendChild(memberUrl);
+
+        main.appendChild(section);
+    });
+}

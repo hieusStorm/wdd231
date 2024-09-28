@@ -74,7 +74,20 @@ nav a {
 }
 
 main {
-    width: 75%;
+    margin: 1rem 1rem;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+}
+
+main section {
+    width: 25rem;
+    border: 1px solid black;
+    text-align: center;
+}
+
+main section img {
+    width: 20rem;
 }
 
 @media screen and (min-width: 500px) {
