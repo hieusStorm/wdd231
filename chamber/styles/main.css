@@ -49,6 +49,10 @@ footer {
     flex-wrap: wrap;
 }
 
+header {
+    margin-bottom: 1rem;
+}
+
 header div h1 {
     margin: 0;
     display: inline;
@@ -73,11 +77,14 @@ nav a {
     text-decoration: underline;
 }
 
+main {
+    text-align: center;
+}
+
 #memberArea {
     margin: 1rem 1rem;
     display: grid;
     grid-template-columns: auto auto auto;
-    
     justify-content: center;
 }
 
@@ -90,6 +97,18 @@ main section {
 
 main section img {
     width: 20rem;
+}
+
+main div button {
+    background: none;
+    border: none;
+    margin: 1rem;
+    padding: 1rem;
+}
+
+main div button:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 1px 1px inset var(--secondary-color);
 }
 
 @media screen and (min-width: 500px) {
