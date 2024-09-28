@@ -8,27 +8,30 @@ navButton.addEventListener("click", () => {
 });
 
 //retrieve & display member data
-async function retrieveMembers(type) {
+async function retrieveMembers() {
     let response = await fetch("https://hieusstorm.github.io/wdd231/chamber/data/members.json");
     let data = await response.json();
-    displayMembers(data.members, type);
+    displayMembers(data.members);
 }
 
-retrieveMembers("grid");
+retrieveMembers();
 
-const displayMembers = (members, type) => {
+const displayMembers = (members) => {
     const memberArea = document.querySelector("#memberArea");
     memberArea.innerHTML = "";
-    if (type == "grid") {
         members.forEach(member => {
-            const section = document.createElement("section");
+            const div = document.createElement("div");
             const img = document.createElement("img");
+            const memberName = document.createElement("p");
             const addressTag = document.createElement("p");
             const numberTag = document.createElement("p");
             const memberUrl = document.createElement("a");
 
             img.setAttribute("src", member.imgUrl);
             img.setAttribute("alt", member.imgName);
+
+            memberName.innerHTML = member.name;
+            memberName.classList.add("memberName");
 
             addressTag.innerHTML = member.address;
             numberTag.innerHTML = member.phoneNumber;
@@ -37,51 +40,22 @@ const displayMembers = (members, type) => {
             memberUrl.setAttribute("target", "_blank");
             memberUrl.innerText = member.url;
 
-            section.appendChild(img);
-            section.appendChild(addressTag);
-            section.appendChild(numberTag);
-            section.appendChild(memberUrl);
+            div.appendChild(img);
+            div.appendChild(memberName);
+            div.appendChild(addressTag);
+            div.appendChild(numberTag);
+            div.appendChild(memberUrl);
 
-            memberArea.appendChild(section);
+            memberArea.appendChild(div);
         });
-    } else {
-        const table = document.createElement("table");
-        members.forEach(member => {
-            const tr = document.createElement("tr");
-            const memberName = document.createElement("td");
-            const address = document.createElement("td");
-            const numberTag = document.createElement("td");
-            const memberUrl = document.createElement("td");
-            const memberLink = document.createElement("a");
-
-            memberName.innerHTML = member.name;
-            address.innerHTML = member.address;
-            numberTag.innerHTML = member.phoneNumber;
-
-            memberLink.setAttribute("href", member.url);
-            memberLink.setAttribute("target", "_blank");
-            memberLink.innerHTML = member.url;
-
-            memberUrl.appendChild(memberLink);
-
-            tr.appendChild(memberName);
-            tr.appendChild(address);
-            tr.appendChild(numberTag);
-            tr.appendChild(memberUrl);
-
-            table.appendChild(tr);
-        });
-
-        memberArea.appendChild(table);
-    }
 }
 
 //buttons to change display style
 const gridButton = document.querySelector("#grid");
 const listButton = document.querySelector("#list");
 
-gridButton.addEventListener("click", () => retrieveMembers("grid"));
-listButton.addEventListener("click", () => retrieveMembers("list"));
+gridButton.addEventListener("click", () => document.querySelector("#memberArea").classList.remove('list'));
+listButton.addEventListener("click", () => document.querySelector("#memberArea").classList.add("list"));
 
 //footer date info
 const currentYear = document.querySelector("#currentYear");
