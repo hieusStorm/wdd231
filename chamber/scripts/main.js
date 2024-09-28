@@ -82,3 +82,14 @@ const listButton = document.querySelector("#list");
 
 gridButton.addEventListener("click", () => retrieveMembers("grid"));
 listButton.addEventListener("click", () => retrieveMembers("list"));
+
+//footer date info
+const currentYear = document.querySelector("#currentYear");
+const lastModified = document.querySelector("#modified")
+//get date information
+const currrentDate = new Date();
+currentYear.innerHTML = currrentDate.getFullYear();
+
+//Get last modified time
+const lastModifiedDate = document.lastModified;
+lastModified.innerHTML = `Last Modified: ${lastModifiedDate}`;
