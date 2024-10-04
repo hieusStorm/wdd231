@@ -57,7 +57,7 @@ const displayMembers = (members) => {
 //display 3 silver or gold memebers randomly
 const displayPriorityMemebers = (members) => {
     const priorityMemebers = document.querySelector("#priorityMemebers");
-    
+
     let priorityMemebersList = members.filter((member) => {
         return member.membershipLevel >= 2;
     });
@@ -77,7 +77,7 @@ const displayPriorityMemebers = (members) => {
         img.setAttribute("src", priorityMemeber.imgUrl);
         img.setAttribute("alt", priorityMemeber.imgName);
         img.setAttribute("loading", "lazy");
-        
+
         name.innerHTML = priorityMemeber.name;
         phone.innerHTML = `<strong>Phone</strong>: ${priorityMemeber.phoneNumber}`;
         url.innerHTML = `<strong>URL</strong>: <a href='${priorityMemeber.url}'>${priorityMemeber.url}</a>`;
@@ -92,11 +92,13 @@ const displayPriorityMemebers = (members) => {
 };
 
 //buttons to change display style
-const gridButton = document.querySelector("#grid");
-const listButton = document.querySelector("#list");
+if (window.location.pathname == "/chamber/directory.html") {
+    const gridButton = document.querySelector("#grid");
+    const listButton = document.querySelector("#list");
 
-gridButton.addEventListener("click", () => document.querySelector("#memberArea").classList.remove('list'));
-listButton.addEventListener("click", () => document.querySelector("#memberArea").classList.add("list"));
+    gridButton.addEventListener("click", () => document.querySelector("#memberArea").classList.remove('list'));
+    listButton.addEventListener("click", () => document.querySelector("#memberArea").classList.add("list"));
+}
 
 //footer date info
 const currentYear = document.querySelector("#currentYear");
@@ -107,3 +109,22 @@ currentYear.innerHTML = currrentDate.getFullYear();
 
 const lastModifiedDate = document.lastModified;
 lastModified.innerHTML = `Last Modified: ${lastModifiedDate}`;
+
+//get weather info and add it 
+async function getWeather() {
+    const url = "https://api.openweathermap.org/data/3.0/onecall?lat=33.68&lon=-112.08&units=imperial&appid=f0e38b89169f8eb67518380a33162ec0";
+
+    try {
+        const response = await fetch(url);
+        if (response.ok) {
+            let data = await response.json();
+            console.log(data);
+        } else {
+            throw Error(await response.text());
+        }
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+getWeather();
