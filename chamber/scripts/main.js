@@ -64,7 +64,9 @@ const displaypriorityMembers = (members) => {
 
     let memebersDisplay = [];
     for (let i = 0; i < 3; i++) {
-        memebersDisplay.push(priorityMembersList[Math.floor(Math.random() * priorityMembersList.length)]);
+        let priorityMemberIndex = Math.floor(Math.random() * priorityMembersList.length);
+        memebersDisplay.push(priorityMembersList[priorityMemberIndex]);
+        priorityMembersList.splice(priorityMemberIndex);
     }
 
     memebersDisplay.forEach(priorityMemeber => {
