@@ -12,7 +12,7 @@ async function retrieveMembers() {
     let response = await fetch("https://hieusstorm.github.io/wdd231/chamber/data/members.json");
     let data = await response.json();
     if (window.location.pathname == "/chamber/index.html") {
-        displayPriorityMemebers(data.members);
+        displaypriorityMembers(data.members);
     } else if (window.location.pathname == "/chamber/directory.html") {
         displayMembers(data.members);
     }
@@ -55,16 +55,16 @@ const displayMembers = (members) => {
     });
 };
 //display 3 silver or gold memebers randomly
-const displayPriorityMemebers = (members) => {
-    const priorityMemebers = document.querySelector("#priorityMemebers");
+const displaypriorityMembers = (members) => {
+    const priorityMembers = document.querySelector("#priorityMembers");
 
-    let priorityMemebersList = members.filter((member) => {
+    let priorityMembersList = members.filter((member) => {
         return member.membershipLevel >= 2;
     });
 
     let memebersDisplay = [];
     for (let i = 0; i < 3; i++) {
-        memebersDisplay.push(priorityMemebersList[Math.floor(Math.random() * priorityMemebersList.length)]);
+        memebersDisplay.push(priorityMembersList[Math.floor(Math.random() * priorityMembersList.length)]);
     }
 
     memebersDisplay.forEach(priorityMemeber => {
@@ -87,7 +87,7 @@ const displayPriorityMemebers = (members) => {
         div.appendChild(phone);
         div.appendChild(url);
 
-        priorityMemebers.appendChild(div);
+        priorityMembers.appendChild(div);
     });
 };
 
