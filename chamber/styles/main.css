@@ -83,6 +83,10 @@ main {
     margin: 2rem auto;
 }
 
+.hero {
+    width: 100%;
+}
+
 .grid {
     margin: 0 auto;
     display: grid;
