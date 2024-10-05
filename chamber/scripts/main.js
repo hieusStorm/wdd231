@@ -137,18 +137,25 @@ function displayWeather(weather) {
     //today's weather
     //make elements 
     const currentTemp = document.createElement("p");
+    const weatherIcon = document.createElement("img");
     const weatherDescription = document.createElement("p");
     const highTemp = document.createElement("p");
     const lowTemp =document.createElement("p");
     const humidity = document.createElement("p");
     const sunrise = document.createElement("p");
     const sunset = document.createElement("p");
+    
     //populate elements
     currentTemp.innerHTML = `${Math.floor(weather.current.temp)}°F`;
-    weatherDescription.innerHTML = weather.current.weather.description;
+    weatherDescription.innerHTML = weather.current.weather[0].description;
     highTemp.innerHTML = `High: ${Math.floor(weather.daily[0].temp.max)}°F`;
     lowTemp.innerHTML = `Low: ${Math.floor(weather.daily[0].temp.min)}°F`;
     humidity.innerHTML = `${Math.floor(weather.current.humidity)}%`;
+    weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${weather.current.weather[0].icon}.png`);
+    weatherIcon.setAttribute("alt", weather.current.weather[0].description);
+    weatherIcon.setAttribute("loading", "lazy");
+    weatherIcon.setAttribute("float", "left");
+
     //convert today sunrise and sunset to human readable time
     let currentSunrise = new Date(weather.current.sunrise * 1000);
     let currentSunset = new Date(weather.current.sunset * 1000);
@@ -157,6 +164,7 @@ function displayWeather(weather) {
 
     //add today's weather to the page
     currentWeatherSection.appendChild(currentTemp);
+    currentWeatherSection.appendChild(weatherIcon);
     currentWeatherSection.appendChild(weatherDescription);
     currentWeatherSection.appendChild(highTemp);
     currentWeatherSection.appendChild(lowTemp);
