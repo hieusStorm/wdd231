@@ -119,6 +119,7 @@ async function getWeather() {
         if (response.ok) {
             let data = await response.json();
             console.log(data);
+            displayWeather(data);
         } else {
             throw Error(await response.text());
         }
@@ -128,3 +129,60 @@ async function getWeather() {
 }
 
 getWeather();
+
+function displayWeather(weather) {
+    const currentWeatherSection = document.querySelector("#currentWeather");
+    const forecastSection = document.querySelector("#weatherForecast");
+
+    //today's weather
+    //make elements 
+    const currentTemp = document.createElement("p");
+    const weatherDescription = document.createElement("p");
+    const highTemp = document.createElement("p");
+    const lowTemp =document.createElement("p");
+    const humidity = document.createElement("p");
+    const sunrise = document.createElement("p");
+    const sunset = document.createElement("p");
+    //populate elements
+    currentTemp.innerHTML = `${Math.floor(weather.current.temp)}°F`;
+    weatherDescription.innerHTML = weather.current.weather.description;
+    highTemp.innerHTML = `High: ${Math.floor(weather.daily[0].temp.max)}°F`;
+    lowTemp.innerHTML = `Low: ${Math.floor(weather.daily[0].temp.min)}°F`;
+    humidity.innerHTML = `${Math.floor(weather.current.humidity)}%`;
+    //convert today sunrise and sunset to human readable time
+    let currentSunrise = new Date(weather.current.sunrise * 1000);
+    let currentSunset = new Date(weather.current.sunset * 1000);
+    sunrise.innerHTML = `Sunrise: ${currentSunrise.toLocaleTimeString("en-US")}`;
+    sunset.innerHTML = `Sunset: ${currentSunset.toLocaleTimeString("en-US")}`;
+
+    //add today's weather to the page
+    currentWeatherSection.appendChild(currentTemp);
+    currentWeatherSection.appendChild(weatherDescription);
+    currentWeatherSection.appendChild(highTemp);
+    currentWeatherSection.appendChild(lowTemp);
+    currentWeatherSection.appendChild(humidity);
+    currentWeatherSection.appendChild(sunrise);
+    currentWeatherSection.appendChild(sunset);
+
+    //forecast section
+    //create elements
+    const todayTemp = document.createElement("p");
+    const tomorrowTemp = document.createElement("p");
+    const dayafterTomorrowTemp = document.createElement("p");
+
+    //determine the day names 
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    let tomorrowTempDate = new Date(weather.daily[1].dt * 1000);
+    let dayafterTomorrowTempDate = new Date(weather.daily[2].dt * 1000);
+
+    //fill content
+    todayTemp.innerHTML = `Today: <strong>${weather.daily[0].temp.day}°F</strong>`;
+    tomorrowTemp.innerHTML = `${days[tomorrowTempDate.getDay()]}: <strong>${weather.daily[1].temp.day}°F</strong>`;
+    dayafterTomorrowTemp.innerHTML = `${days[dayafterTomorrowTempDate.getDay()]}: <strong>${weather.daily[2].temp.day}°F</strong>`;
+    
+    //add to the page
+    forecastSection.appendChild(todayTemp);
+    forecastSection.appendChild(tomorrowTemp);
+    forecastSection.appendChild(dayafterTomorrowTemp);
+
+}
