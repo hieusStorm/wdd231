@@ -117,13 +117,13 @@ let requiredCredits = 0;
 let remainingCredits = 0;
 
 courses.forEach(course => {
-    if(!course.completed) {
+    if (!course.completed) {
         remainingCredits += course.credits;
     }
     requiredCredits += course.credits;
 });
 
-document.getElementById("credit").innerHTML = `Required Credits total: ${requiredCredits}  Remaining Credits: ${remainingCredits}`; 
+document.getElementById("credit").innerHTML = `Required Credits total: ${requiredCredits}  Remaining Credits: ${remainingCredits}`;
 
 function clearCourses() {
     let courseSpans = document.querySelectorAll("section span");
@@ -152,5 +152,29 @@ function display(filter = "all") {
         }
 
         section.appendChild(courseTag);
+        
+        courseTag.addEventListener('click', ()=> {
+            displayCourseInfo(course);
+        });
+    });
+}
+
+function displayCourseInfo(course) {
+    const courseDetails = document.querySelector("#courseDetails");
+    courseDetails.innerHTML = "";
+    courseDetails.innerHTML = `
+    <button id='closeModal'>X</button>
+    <h2>${course.subject} ${course.number}</h2>
+    <h3>${course.title}</h3>
+    <p><strong>Credits</strong>: ${course.credits}</p>
+    <p><strong>Certificate</strong>: ${course.certificate}</p>
+    <p>${course.description}</p>
+    <p><strong>Technologies</strong>: ${course.technology.join(', ')}</p>
+    `;
+
+    courseDetails.showModal();
+
+    document.querySelector("#closeModal").addEventListener("click", () => {
+        courseDetails.close();
     });
 }
