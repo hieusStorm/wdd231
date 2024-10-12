@@ -120,7 +120,6 @@ async function getWeather() {
         const response = await fetch(url);
         if (response.ok) {
             let data = await response.json();
-            console.log(data);
             displayWeather(data);
         } else {
             throw Error(await response.text());
@@ -130,7 +129,9 @@ async function getWeather() {
     }
 }
 
-getWeather();
+if (window.location.pathname == "/chamber/index.html") {
+    getWeather();
+}
 
 function displayWeather(weather) {
     const currentWeatherSection = document.querySelector("#currentWeather");
@@ -142,11 +143,11 @@ function displayWeather(weather) {
     const weatherIcon = document.createElement("img");
     const weatherDescription = document.createElement("p");
     const highTemp = document.createElement("p");
-    const lowTemp =document.createElement("p");
+    const lowTemp = document.createElement("p");
     const humidity = document.createElement("p");
     const sunrise = document.createElement("p");
     const sunset = document.createElement("p");
-    
+
     //populate elements
     currentTemp.innerHTML = `${Math.floor(weather.current.temp)}°F`;
     weatherDescription.innerHTML = weather.current.weather[0].description;
@@ -189,10 +190,36 @@ function displayWeather(weather) {
     todayTemp.innerHTML = `Today: <strong>${weather.daily[0].temp.day}°F</strong>`;
     tomorrowTemp.innerHTML = `${days[tomorrowTempDate.getDay()]}: <strong>${weather.daily[1].temp.day}°F</strong>`;
     dayafterTomorrowTemp.innerHTML = `${days[dayafterTomorrowTempDate.getDay()]}: <strong>${weather.daily[2].temp.day}°F</strong>`;
-    
+
     //add to the page
     forecastSection.appendChild(todayTemp);
     forecastSection.appendChild(tomorrowTemp);
     forecastSection.appendChild(dayafterTomorrowTemp);
 
+}
+
+//code to run if the page is the join page
+if (window.location.pathname == "/chamber/join.html") {
+    //get form tags
+    const orginazationTitle = document.querySelector("input[name='organization-title']");
+    const timeStamp = document.querySelector("#timestamp");
+
+    //fill timestamp info
+    timeStamp.setAttribute("value", `${currrentDate.toLocaleDateString()} ${currrentDate.toLocaleTimeString()}`);
+
+    //make modals work
+    openButtons = document.querySelectorAll(".openButton");
+    closeButtons = document.querySelectorAll(".closeButton");
+
+    for (let i = 0; i < openButtons.length; i++) {
+        openButtons[i].addEventListener('click', ()=> {
+            const membershipLevelInfo = document.querySelector(`#membershipLevel${i}`);
+            membershipLevelInfo.showModal();
+        });
+
+        closeButtons[i].addEventListener('click', ()=> {
+            const membershipLevelInfo = document.querySelector(`#membershipLevel${i}`);
+            membershipLevelInfo.close();
+        });
+    }
 }

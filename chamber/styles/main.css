@@ -208,6 +208,24 @@ input[type="submit"]:hover, .openButton:hover, .closeButton:hover {
     box-shadow: 0px 0px 3px 3px inset var(--secondary-color);   
 }
 
+::backdrop {
+    background-color: #4f4844e6;
+}
+
+:modal {
+    margin: auto;
+    padding: 3rem;
+    border-radius: 25px;
+    max-width: 50%;
+    text-align: left;
+}
+
+.closeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 @media screen and (min-width: 500px) {
     header {
         flex-wrap: nowrap;

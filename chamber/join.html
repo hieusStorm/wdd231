@@ -55,7 +55,7 @@
                         <label>
                             <p>Organizational Title:</p>
                             <input type="text" name="organization-title" title="organization-title"
-                                placeholder="Example Organization Title" autocomplete="organization-title">
+                                placeholder="Example Organization Title" autocomplete="organization-title" pattern="[A-za-z-]{7,}">
                         </label>
                         <label>
                             <p>Email: *</p>
@@ -85,16 +85,17 @@
                             <p>Description:</p>
                             <textarea name="description" title="description"></textarea>
                         </label>
-                        <input type="hidden" name="timestamp" id="timestamp" value="">
+                        <input type="hidden" name="timestamp" id="timestamp">
                         <input type="submit" value="Join Commerce">`
                     </form>
                 </section>
                 <section>
                     <h2>Membership Level Information</h2>
                     <div>
-                        <h3>Non Profit Membership Level</h3>
+                        <h3>Nonprofit Membership Level</h3>
                         <button class="openButton">Learn More</button>
                         <dialog id="membershipLevel0">
+                            <h4>Nonprofit Membership Level</h4>
                             <button class="closeButton">X</button>
                             <p>The Nonprofit Membership Level is a complimentary option that allows us to promote your
                                 business through all our promotional materials and on our directory website.
@@ -107,6 +108,7 @@
                         <h3>Bronze Membership Level</h3>
                         <button class="openButton">Learn More</button>
                         <dialog id="membershipLevel1">
+                            <h4>Bronze Membership Level</h4>
                             <button class="closeButton">X</button>
                             <p>The Bronze Membership Level is a complimentary option for for-profit businesses, enabling
                                 us
@@ -119,6 +121,7 @@
                         <h3>Silver Membership Level</h3>
                         <button class="openButton">Learn More</button>
                         <dialog id="membershipLevel2">
+                            <h4>Silver Membership Level</h4>
                             <button class="closeButton">X</button>
                             <p>The Silver Membership Level is a paid option for for-profit businesses, available for
                                 just $10 per month. This membership allows for your business to be prominently
@@ -132,6 +135,7 @@
                         <button class="openButton">Learn More</button>
                         <dialog id="membershipLevel3">
                             <button class="closeButton">X</button>
+                            <h4>Gold Membership Level</h4>
                             <p>The Gold Membership Level is a premium option for for-profit businesses, available for
                                 $20 per month. This membership offers prominent advertising for your business in our
                                 promotional materials and on our website. You’ll also receive a dedicated stand at all
