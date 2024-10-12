@@ -178,6 +178,36 @@ main div button:hover {
     padding: 1rem;
 }
 
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    margin: 0 auto;
+}
+
+form input, form textarea, form select {
+    width: 25rem;
+    margin-bottom: 1rem;
+}
+
+input[type="submit"], .openButton, .closeButton {
+    border: none;
+    background-color: var(--primary-color);
+    padding: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+input[type="submit"]:hover, .openButton:hover, .closeButton:hover {
+    box-shadow: 0px 0px 3px 3px inset var(--secondary-color);   
+}
+
 @media screen and (min-width: 500px) {
     header {
         flex-wrap: nowrap;
@@ -204,6 +234,11 @@ main div button:hover {
 
     .grid {
         grid-template-columns: 1fr 1fr 1fr
+    }
+
+    .flex {
+        flex-direction: row;
+        justify-content: space-evenly;
     }
 
     #priorityMembers {

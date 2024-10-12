@@ -33,11 +33,115 @@
                 <button id="navButton"></button>
                 <a href="index.html">Home</a>
                 <a href="directory.html">Directory</a>
-                <a href="join.html">Join</a>
+                <a href="join.html" id="current">Join</a>
                 <a href="#">Discover</a>
             </nav>
         </header>
-        <main></main>
+        <main>
+            <div class="flex">
+                <section>
+                    <h2>Membership Application</h2>
+                    <form method="get" action="thankyou.html">
+                        <label>
+                            <p>First Name: *</p>
+                            <input type="text" name="firstName" title="firstName" required placeholder="First Name"
+                                autocomplete="given-name">
+                        </label>
+                        <label>
+                            <p>Last Name: *</p>
+                            <input type="text" name="lastName" title="lastName" required placeholder="Last Name"
+                                autocomplete="family-name">
+                        </label>
+                        <label>
+                            <p>Organizational Title:</p>
+                            <input type="text" name="organization-title" title="organization-title"
+                                placeholder="Example Organization Title" autocomplete="organization-title">
+                        </label>
+                        <label>
+                            <p>Email: *</p>
+                            <input type="email" name="email" title="email" required placeholder="exampleEmail@gmail.com"
+                                autocomplete="email">
+                        </label>
+                        <label>
+                            <p>Phone Number: *</p>
+                            <input type="tel" name="phoneNumber" title="phoneNumber" required autocomplete="tel">
+                        </label>
+                        <label>
+                            <p>Business/Organization's Name: *</p>
+                            <input type="text" name="businessName" title="businessName" required
+                                placeholder="Example Business" autocomplete="organization">
+                        </label>
+                        <label>
+                            <p>Membership Level: *</p>
+                            <select name="membershipLevel" title="membershipLevel" required>
+                                <option value="" selected disabled>Select a Membership Level</option>
+                                <option value="0">Nonprofit Membership</option>
+                                <option value="1">Bronze Membership</option>
+                                <option value="2">Silver Membership</option>
+                                <option value="3">Gold Membership</option>
+                            </select>
+                        </label>
+                        <label>
+                            <p>Description:</p>
+                            <textarea name="description" title="description"></textarea>
+                        </label>
+                        <input type="hidden" name="timestamp" id="timestamp" value="">
+                        <input type="submit" value="Join Commerce">`
+                    </form>
+                </section>
+                <section>
+                    <h2>Membership Level Information</h2>
+                    <div>
+                        <h3>Non Profit Membership Level</h3>
+                        <button class="openButton">Learn More</button>
+                        <dialog id="membershipLevel0">
+                            <button class="closeButton">X</button>
+                            <p>The Nonprofit Membership Level is a complimentary option that allows us to promote your
+                                business through all our promotional materials and on our directory website.
+                                Additionally,
+                                your business will receive a dedicated stand at every promotional event hosted by the
+                                Commerce, providing valuable exposure and networking opportunities.</p>
+                        </dialog>
+                    </div>
+                    <div>
+                        <h3>Bronze Membership Level</h3>
+                        <button class="openButton">Learn More</button>
+                        <dialog id="membershipLevel1">
+                            <button class="closeButton">X</button>
+                            <p>The Bronze Membership Level is a complimentary option for for-profit businesses, enabling
+                                us
+                                to showcase your company in our promotional materials and on our businesses directory.
+                                You will have the opportunity to set up a stand at any event you choose to participate
+                                in, maximizing your visibility and engagement.</p>
+                        </dialog>
+                    </div>
+                    <div>
+                        <h3>Silver Membership Level</h3>
+                        <button class="openButton">Learn More</button>
+                        <dialog id="membershipLevel2">
+                            <button class="closeButton">X</button>
+                            <p>The Silver Membership Level is a paid option for for-profit businesses, available for
+                                just $10 per month. This membership allows for your business to be prominently
+                                advertised in our promotional materials and on our website. In addition, you will
+                                receive a dedicated stand at all events, enhancing your visibility and opportunities for
+                                engagement.</p>
+                        </dialog>
+                    </div>
+                    <div>
+                        <h3>Gold Membership Level</h3>
+                        <button class="openButton">Learn More</button>
+                        <dialog id="membershipLevel3">
+                            <button class="closeButton">X</button>
+                            <p>The Gold Membership Level is a premium option for for-profit businesses, available for
+                                $20 per month. This membership offers prominent advertising for your business in our
+                                promotional materials and on our website. You’ll also receive a dedicated stand at all
+                                events, maximizing your visibility and engagement. Furthermore, we will invest in
+                                targeted ads to further promote your business, ensuring you reach a wider audience.</p>
+                        </dialog>
+                    </div>
+                </section>
+            </div>
+        </main>
         <footer>
             <div>
                 <p>Deer Vally AZ Chamber of Commerce</p>
