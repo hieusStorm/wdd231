@@ -232,6 +232,10 @@ input[type="submit"]:hover, .openButton:hover, .closeButton:hover {
     padding: 1rem;
 }
 
+#memberInfo {
+    text-align: left;
+}
+
 @keyframes fadeIn {
     0% {
         opacity: 0;
