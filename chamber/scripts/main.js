@@ -226,7 +226,7 @@ if (window.location.pathname == "/chamber/join.html") {
 
 //code to run if the on the thank you page
 if (window.location.pathname == "/chamber/thankyou.html") {
-    const memberInfo = document.getElementById("meberInfo");
+    const memberInfo = document.getElementById("memberInfo");
     const currentUrl = window.location.href;
     const submittedInfo = currentUrl.split('?')[1].split('&');
     submittedInfo.forEach(infoBit => {
