@@ -218,12 +218,40 @@ input[type="submit"]:hover, .openButton:hover, .closeButton:hover {
     border-radius: 25px;
     max-width: 50%;
     text-align: left;
+    animation: fadeIn 0.5s;
 }
 
 .closeButton {
     position: absolute;
     top: 0;
     right: 0;
+}
+
+.memberCards{
+    animation: fadeIn 1s;
+    padding: 1rem;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0.25;
+    }
+    
+    50% {
+        opacity: 0.5;
+    }
+
+    75% {
+        opacity: 0.75;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @media screen and (min-width: 500px) {
