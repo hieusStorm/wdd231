@@ -212,14 +212,30 @@ if (window.location.pathname == "/chamber/join.html") {
     closeButtons = document.querySelectorAll(".closeButton");
 
     for (let i = 0; i < openButtons.length; i++) {
-        openButtons[i].addEventListener('click', ()=> {
+        openButtons[i].addEventListener('click', () => {
             const membershipLevelInfo = document.querySelector(`#membershipLevel${i}`);
             membershipLevelInfo.showModal();
         });
 
-        closeButtons[i].addEventListener('click', ()=> {
+        closeButtons[i].addEventListener('click', () => {
             const membershipLevelInfo = document.querySelector(`#membershipLevel${i}`);
             membershipLevelInfo.close();
         });
     }
+}
+
+//code to run if the on the thank you page
+if (window.location.pathname == "/chamber/thankyou.html") {
+    const memberInfo = document.getElementById("meberInfo");
+    const currentUrl = window.location.href;
+    const submittedInfo = currentUrl.split('?')[1].split('&');
+    submittedInfo.forEach(infoBit => {
+        dataParts = infoBit.split("=");
+
+        if ((dataParts[0] != "organization-title") || (dataParts[0] != "description")) {
+            const paragraph = document.createElement("p");
+            paragraph.innerHTML = `<strong>${dataParts[0]}</strong>: ${dataParts[1]}`;
+            memberInfo.appendChild(paragraph);
+        }
+    });
 }
