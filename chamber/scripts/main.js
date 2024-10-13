@@ -231,10 +231,13 @@ if (window.location.pathname == "/chamber/thankyou.html") {
     const submittedInfo = currentUrl.split('?')[1].split('&');
     submittedInfo.forEach(infoBit => {
         dataParts = infoBit.split("=");
-
-        if ((dataParts[0] != "organization-title") || (dataParts[0] != "description")) {
+        console.log(dataParts[0]);
+        if ((dataParts[0] != "organization-title") && (dataParts[0] != "description") && (dataParts[0] != "membership-level")) {
             const paragraph = document.createElement("p");
-            paragraph.innerHTML = `<strong>${dataParts[0]}</strong>: ${dataParts[1]}`;
+
+            //add the data to the page and make all the data readable
+            paragraph.innerHTML = `<strong>${dataParts[0]}</strong>: ${dataParts[1].replace("%40", "@").replaceAll("%2F", "/").replaceAll("%3A", ":").replaceAll("+", " ")}`;
+
             memberInfo.appendChild(paragraph);
         }
     });
