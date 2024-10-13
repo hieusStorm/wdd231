@@ -188,6 +188,7 @@ form {
     flex-direction: column;
     width: 25rem;
     margin: 0 auto;
+    text-align: left;
 }
 
 form input, form textarea, form select {
@@ -212,7 +213,7 @@ input[type="submit"]:hover, .openButton:hover, .closeButton:hover {
     background-color: #4f4844e6;
 }
 
-:modal {
+dialog {
     margin: auto;
     padding: 3rem;
     border-radius: 25px;
