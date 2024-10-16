@@ -1,0 +1,9 @@
+:root {
+    --primary-color: #0a5e3b;
+    --secondary-color: #922a0b;
+}
+
+header, footer {
+    background-color: var(--primary-color);
+    color: #fff;
+}
