@@ -106,8 +106,8 @@ if (window.location.pathname == "/chamber/directory.html") {
 const currentYear = document.querySelector("#currentYear");
 const lastModified = document.querySelector("#modified")
 
-const currrentDate = new Date();
-currentYear.innerHTML = currrentDate.getFullYear();
+const currentDate = new Date();
+currentYear.innerHTML = currentDate.getFullYear();
 
 const lastModifiedDate = document.lastModified;
 lastModified.innerHTML = `Last Modified: ${lastModifiedDate}`;
@@ -205,7 +205,7 @@ if (window.location.pathname == "/chamber/join.html") {
     const timeStamp = document.querySelector("#timestamp");
 
     //fill timestamp info
-    timeStamp.setAttribute("value", `${currrentDate.toLocaleDateString()} ${currrentDate.toLocaleTimeString()}`);
+    timeStamp.setAttribute("value", `${currentDate.toLocaleDateString()} ${currentDate.toLocaleTimeString()}`);
 
     //make modals work
     openButtons = document.querySelectorAll(".openButton");
@@ -241,4 +241,31 @@ if (window.location.pathname == "/chamber/thankyou.html") {
             memberInfo.appendChild(paragraph);
         }
     });
+}
+
+//code to run on discover page
+if(window.location.pathname == "/chamber/discover.html") {
+    //create a message based on last vist
+    const lastVisit = new Date(localStorage.getItem("lastVisit"));
+    const lastVisitTag  = document.querySelector("#lastVisit");
+    if(localStorage.getItem("lastVisit") == null) {
+        localStorage.setItem("lastVisit", currentDate);
+        lastVisitTag.innerHTML = "Welcome please let us know if you have any questions!";
+    } else if ((lastVisit.getMonth() == currentDate.getMonth()) && (lastVisit.getDate() == currentDate.getDate())) {
+        lastVisitTag.innerHTML = "Back so soon Awesome!";
+    } else {
+        const msToDays = 86400000;
+        daysSinceVisit = (lastVisit.now() - currentDate.now()) / msToDays;
+        lastVisitTag.innerHTML = (daysSinceVisit == 1) ? `You last visited ${daysSinceVisit} day ago.` : `You last visited ${daysSinceVisit} days ago.`;
+    }
+    
+    //populate events
+    let eventsSection = document.querySelector("#commerceEvents")
+    for (let i = 0; i < 3; i++) {
+        let potentialEvents = [`Taste Tester Sale: ${currentDate.getMonth()}/${currentDate.getDate()} - ${currentDate.getMonth()}/${currentDate.getDate() + i + 1}`, `Commerce Meet Up: ${currentDate.getMonth()}/${currentDate.getDate() + i}`, `Fundraiser for Local Schools: ${currentDate.getMonth()}/${currentDate.getDate()} - ${currentDate.getMonth()}/${currentDate.getDate() + ((i + 1) * 2)}`];
+        let annoucedEvent = document.createElement("p");
+        let randomEvent = Math.floor(Math.random() * 3);
+        annoucedEvent.innerHTML = potentialEvents[randomEvent];
+        eventsSection.appendChild(annoucedEvent);
+    }
 }
