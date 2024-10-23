@@ -1,6 +1,8 @@
+/* psuedo class formatting */
 :root {
     --primary-color: #0a5e3b;
     --secondary-color: #922a0b;
+    --font-color: #FFF;
 }
 
 * {
@@ -10,11 +12,59 @@
     text-align: center;
 }
 
+/* id formatting */
+#navButton::before {
+    content: "☰";
+}
+
+#navButton {
+    border: none;
+    background: none;
+    position: absolute;
+    top: 0;
+    right: 1rem;
+    font-size: 3rem;
+    color: var(--font-color);
+    transition: 1s;
+}
+
+#current {
+    text-decoration: underline;
+}
+
+/* class format */
+/* tag formatting */
 header,
 footer {
     background-color: var(--primary-color);
-    color: #fff;
+    color: var(--font-color);
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav {
+    flex: 100%;
+    background-color: var(--secondary-color);
+    color: var(--font-color);
     padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--font-color);
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: 0.5s;
+}
+
+nav a:hover {
+    background-color: var(--primary-color);
 }
 
 h1,
@@ -24,4 +74,13 @@ h4,
 h5,
 h6 {
     font-family: 'Nanum Gothic', 'Lato', Arial, Helvetica, serif;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+footer {
+    padding: 1rem;
 }
