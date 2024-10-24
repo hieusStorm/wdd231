@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Magic Deck Builder | Home</title>
+        <meta name="description" content="Site plan for a site to make a deck and explain how to play the deck">
+        <meta name="author" content="Hyrum Wines | WDD 231">
+        <meta property="og:title" content="Magic Deck Learner">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://hieusstorm.github.io/wdd231/project/images/logo.png">
+        <meta property="og:url" content="https://hieusstorm.github.io/wdd231/project">
+        <link rel="icon" href="favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nanum+Gothic&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="styles/main.css">
+        <script src="scripts/main.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <img src="images/logo.png" alt="logo" loading="lazy">
+            <h1>Magic Deck Learner</h1>
+            <nav>
+                <button id="navButton"></button>
+                <a href="index.html">Home</a>
+                <a href="addDeck.html">Add Deck</a>
+                <a href="archetypes.html" id="current">Archetypes</a>
+            </nav>
+        </header>
+        <main>
+            <h2>Arechtypes</h2>
+            <p>What is an archetype? In Magic: The Gathering, an archetype refers to the overarching strategy that a
+                deck employs. It serves as a framework that guides card selection and influences why specific cards are
+                included. By defining the deck’s playstyle, archetypes help players understand their strategy and the
+                optimal approach to achieving victory.</p>
+            <div class="grid">
+                <section class="tile">
+                    <h3>Aggro</h3>
+                    <p>Aggro decks are designed to win games quickly, focusing on fast-paced offense. They typically
+                        achieve this by aggressively attacking with creatures or employing low-cost spells to deal
+                        direct damage to the opponent.</p>
+                </section>
+                <section class="tile">
+                    <h3>Control</h3>
+                    <p>Control decks are crafted to secure victory by first establishing dominance over the game and
+                        preventing opponents from gaining a foothold. Typically, these decks operate in two phases: the
+                        control phase and the finisher phase. In the control phase, players utilize various forms of
+                        removal and disruption to stifle the opponent’s strategy and prevent any significant advantages.
+                        Once control is firmly established, the deck transitions to the finisher phase, where victory is
+                        achieved through leveraging board advantage and deploying powerful threats.</p>
+                </section>
+                <section class="tile">
+                    <h3>Combo</h3>
+                    <p>Combo decks aim to secure victory through specific combinations of cards. Typically, this is an
+                        A+B approach, where playing card A alongside card B leads directly to winning the game.
+                        Occasionally, combo decks are built around an engine—a set of cards designed to generate ongoing
+                        value or facilitate a win condition. While these engines may not end the game immediately, their
+                        repeated use can ultimately lead to a decisive victory.</p>
+                </section>
+                <section class="tile">
+                    <h3>Tempo</h3>
+                    <p>Tempo decks aim to win by blending aggressive and control strategies. Typically featuring
+                        low-cost creatures, these decks switch between an aggressive play style and a more controlling
+                        approach. Tempo decks focus on setting the pace of the game, using fast, efficient threats and
+                        strategic interactions to maintain an advantage. By applying pressure while also disrupting
+                        their opponent’s game plan, they create opportunities to secure victory.</p>
+                </section>
+                <section class="tile">
+                    <h3>Midrange</h3>
+                    <p>Midrange decks serve as a balanced approach between control and combo strategies. They
+                        incorporate both explosive win conditions and slower, interactive cards, allowing for
+                        versatility in gameplay. These decks can adapt their main strategy based on the current game
+                        state, shifting focus to whichever style—aggressive or controlling—best suits the situation.
+                        This flexibility enables midrange decks to respond effectively to various opponents and game
+                        dynamics.</p>
+                </section>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; Hyrum Wines | WDD 231</p>
+        </footer>
+    </body>
+</html>
