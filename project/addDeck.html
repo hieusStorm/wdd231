@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Magic Deck Builder | Home</title>
+        <meta name="description" content="Site plan for a site to make a deck and explain how to play the deck">
+        <meta name="author" content="Hyrum Wines | WDD 231">
+        <meta property="og:title" content="Magic Deck Learner">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://hieusstorm.github.io/wdd231/project/images/logo.png">
+        <meta property="og:url" content="https://hieusstorm.github.io/wdd231/project">
+        <link rel="icon" href="favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Nanum+Gothic&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="styles/main.css">
+        <script src="scripts/main.js" defer></script>
+    </head>
+    <body>
+        <header>
+            <img src="images/logo.png" alt="logo" loading="lazy">
+            <h1>Magic Deck Learner</h1>
+            <nav>
+                <button id="navButton"></button>
+                <a href="index.html">Home</a>
+                <a href="addDeck.html" id="current">Add Deck</a>
+                <a href="archetypes.html">Archetypes</a>
+            </nav>
+        </header>
+        <main>
+            <h2>Add Deck</h2>
+            <div class="flex">
+                <form action="deckAdded.html" method="get">
+                    <label>Deck Name: <input required type="text" name="name" placeholder="Deck Name"></label>
+                    <label>Format: <input type="text" name="format" title="The format the deck is in"
+                            placeholder="Pauper"></label>
+                    <label>Archetype: <select name="archetype" title="The general style and plan of the deck">
+                            <option value="" selected disabled>Select an archetype</option>
+                            <option value="Aggro"
+                                title="Aggro decks aim to win quickly through fast-paced offense, primarily by aggressively attacking with creatures and using low-cost spells for direct damage to the opponent.">
+                                Aggro</option>
+                            <option value="Control"
+                                title="Control decks aim to secure victory by establishing dominance through disruption and removal, transitioning to a finisher phase where they leverage board advantage and deploy powerful threats.">
+                                Control</option>
+                            <option value="Combo"
+                                title="Combo decks seek victory through specific card combinations, often using an A+B approach, and may also rely on engines that generate ongoing value to eventually secure a win.">
+                                Combo</option>
+                            <option value="Midrange"
+                                title="Midrange decks balance control and combo strategies by combining explosive win conditions with slower, interactive cards, allowing them to adapt their gameplay based on the current game state.">
+                                Midrange</option>
+                            <option value="Tempo"
+                                title="Tempo decks blend aggressive and control strategies, using low-cost creatures to set the game's pace while applying pressure and disrupting opponents to create opportunities for victory.">
+                                Tempo</option>
+                        </select></label>
+                    <label>Strategy <textarea name="strategy" title="The main strategy of the deck"
+                            required></textarea></label>
+                    <label>Deck List <textarea name="list" required
+                            title="The deck list please seperate each card using a comma"></textarea></label>
+                    <label>Upload Photo <input type="file" name="photo" title="A photo to represent your deck" accept="image/*"></label>
+                    <input type="submit" value="Add Deck">
+                </form>
+                <div>
+                    <h3>Quick Explanations</h3>
+                    <p><strong>Format</strong>: A format in Magic: The Gathering determines which cards are eligible for
+                        play. For example, Pauper restricts decks to only common rarity cards, while Legacy permits the
+                        use of any cards printed since the game's inception. Each format has its own rules and
+                        restrictions, shaping the types of strategies and decks that can be used in gameplay.</p>
+                    <p><strong>Arechtype</strong>: An archetype defines the overarching strategy of a deck. Common
+                        archetypes include Aggro, Control, Combo, Tempo, and Midrange, each representing distinct
+                        approaches to gameplay and card selection. Understanding these archetypes helps players
+                        strategize effectively and build decks that align with their preferred playstyle.</p>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; Hyrum Wines | WDD 231</p>
+        </footer>
+    </body>
+</html>

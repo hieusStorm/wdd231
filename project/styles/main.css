@@ -40,6 +40,7 @@
     border-radius: 1rem;
     cursor: pointer;
 }
+
 .tile:hover {
     box-shadow: inset 0px 0px 3px 2px var(--primary-color);
 }
@@ -49,6 +50,15 @@
     grid-template-columns: repeat(3, 1fr);
 }
 
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex div, form{
+    width: 50%;
+    margin: 1rem;
+}
 
 /* tag formatting */
 header,
@@ -91,8 +101,38 @@ h4,
 h5,
 h6 {
     font-family: 'Nanum Gothic', 'Lato', Arial, Helvetica, serif;
+    margin-bottom: 1rem;
+}
+
+main {
+    margin: 1rem;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    margin: 1rem 0;
+}
+
+input[type="submit"],
+select {
+    border: none;
+    background: none;
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    padding: 1rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--secondary-color);
 }
 
 footer {
+    margin-top: 1rem;
     padding: 1rem;
 }

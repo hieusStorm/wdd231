@@ -5,6 +5,8 @@ if(window.location.pathname == "/project/index.html" || window.location.pathname
     getDeckLists("display");
 } else if (window.location.pathname == "/project/deckList.html") {
     getDeckLists("list")
+} else if (window.loacation.pathname == "/project/deckAdded.html") {
+    displayAddedDeck();
 }
 //functions
 
@@ -85,4 +87,34 @@ function displayDeckList(decks) {
 
     // add all the elements to the page
     main.append(title, format, img, deckListHeading, list, strategyHeading, archetype, strategy);
+}
+
+function displayAddedDeck() {
+    const deckInfo = window.location.href.split("?")[1].split("&");
+    const main = document.querySelector("main");
+    
+    //create the elements 
+    const title = document.createElement("h2");
+    const format = document.createElement("p");
+    const deckListHeading = document.createElement("h3");
+    const deckList = document.createElement("ul");
+    const strategyHeading = document.createElement("h3");
+    const archetype = document.createElement("p");
+    const strategy = document.createElement("p");
+    
+    //fill up the elements
+    title.innerHTML = deckInfo[0].split("=")[1];
+    format.innerHTML = `Format: ${deckInfo[1].split("=")[1]}`;
+    deckListHeading.innerHTML = `Deck List`;
+
+    let deckCards = deckInfo[4].split("=")[1].split(",");
+    deckCards.forEach(card => {
+        const cardElement = document.createElement("li");
+        cardElement.innerHTML = card;
+        deckList.appendChild(cardElement);
+    });
+    
+    strategyHeading.innerHTML = `Strategy`;
+    archetype.innerHTML = `Archetype: ${deckInfo[2].split("=")[1]}`;
+    strategy.innerHTML = deckInfo[3].split("=");
 }
