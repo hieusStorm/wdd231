@@ -5,7 +5,7 @@ if(window.location.pathname == "/project/index.html" || window.location.pathname
     getDeckLists("display");
 } else if (window.location.pathname == "/project/deckList.html") {
     getDeckLists("list")
-} else if (window.loacation.pathname == "/project/deckAdded.html") {
+} else if (window.location.pathname == "/project/deckAdded.html") {
     displayAddedDeck();
 }
 //functions
@@ -89,6 +89,7 @@ function displayDeckList(decks) {
     main.append(title, format, img, deckListHeading, list, strategyHeading, archetype, strategy);
 }
 
+//load the recently added deck
 function displayAddedDeck() {
     const deckInfo = window.location.href.split("?")[1].split("&");
     const main = document.querySelector("main");
@@ -107,14 +108,17 @@ function displayAddedDeck() {
     format.innerHTML = `Format: ${deckInfo[1].split("=")[1]}`;
     deckListHeading.innerHTML = `Deck List`;
 
-    let deckCards = deckInfo[4].split("=")[1].split(",");
+    let deckCards = deckInfo[4].split("=")[1].split("%2C");
     deckCards.forEach(card => {
         const cardElement = document.createElement("li");
-        cardElement.innerHTML = card;
+        cardElement.innerHTML = card.replaceAll("+", " ");
         deckList.appendChild(cardElement);
     });
     
     strategyHeading.innerHTML = `Strategy`;
     archetype.innerHTML = `Archetype: ${deckInfo[2].split("=")[1]}`;
-    strategy.innerHTML = deckInfo[3].split("=");
+    strategy.innerHTML = `Strategy: ${deckInfo[3].split("=")[1].replaceAll("+", " ")}`;
+
+    //add elements to the page
+    main.append(title, format, deckListHeading, deckList, strategyHeading, archetype, strategy);
 }

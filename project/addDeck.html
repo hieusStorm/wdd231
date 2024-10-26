@@ -34,7 +34,7 @@
             <h2>Add Deck</h2>
             <div class="flex">
                 <form action="deckAdded.html" method="get">
-                    <label>Deck Name: <input required type="text" name="name" placeholder="Deck Name"></label>
+                    <label>Deck Name*: <input required type="text" name="name" placeholder="Deck Name"></label>
                     <label>Format: <input type="text" name="format" title="The format the deck is in"
                             placeholder="Pauper"></label>
                     <label>Archetype: <select name="archetype" title="The general style and plan of the deck">
@@ -55,9 +55,9 @@
                                 title="Tempo decks blend aggressive and control strategies, using low-cost creatures to set the game's pace while applying pressure and disrupting opponents to create opportunities for victory.">
                                 Tempo</option>
                         </select></label>
-                    <label>Strategy <textarea name="strategy" title="The main strategy of the deck"
+                    <label>Strategy*: <textarea name="strategy" title="The main strategy of the deck"
                             required></textarea></label>
-                    <label>Deck List <textarea name="list" required
+                    <label>Deck List*: <textarea name="list" required
                             title="The deck list please seperate each card using a comma"></textarea></label>
                     <label>Upload Photo <input type="file" name="photo" title="A photo to represent your deck" accept="image/*"></label>
                     <input type="submit" value="Add Deck">
