@@ -60,7 +60,7 @@
             "archetype": "Control",
             "list": "1 Fallaji Archaeologist,4 Gurmag Angler,4 Tolarian Terror,4 Brainstorm,1 Crawl from the Cellar,4 Mental Note,2 Spell Pierce,4 Thought Scour,1 Agony Warp,2 Cast Down,4 Counterspell,2 Unexpected Fangs,1 Suffocating Fumes,2 Deep Analysis,4 Snuff Out,4 Lorien Revealed,4 Contaminated Aquifer,1 Ice Tunnel,11 Island",
             "strategy": "The strategy of Dimir Terror focuses on controlling the game while leveraging powerful creatures like *Gurmag Angler* and *Tolarian Terror* to apply pressure. This deck employs a suite of spells that prioritize card draw, filtering, and disruption, utilizing cards like *Brainstorm* and *Thought Scour* to quickly fill the graveyard, enabling the casting of large threats at reduced costs. Control elements such as *Counterspell* and *Spell Pierce* allow you to protect your game plan by countering key threats from your opponent, while removal spells like *Cast Down* and *Snuff Out* help maintain board presence. Additionally, cards like *Lorien Revealed* provide card advantage, ensuring you have options as the game progresses. The ultimate goal is to create a dominant board state with your efficient creatures while systematically dismantling your opponent's strategy through a combination of disruption and aggressive threats.",
-            "photo": "images/dimir-terror.jpg",
+            "photo": "images/dimir-terror.jpeg",
             "id": 6
         },
         {
@@ -82,7 +82,7 @@
             "id": 8
         },
         {
-            "name": "affinity",
+            "name": "Izzet Terror",
             "format": "pauper",
             "archetype": "Control",
             "list": "4 Augur of Bolas,1 Azure Fleet Admiral,1 Crimson Fleet Commodore,2 Murmuring Mystic,4 Tolarian Terror,4 Brainstorm,4 Lightning Bolt,4 Ponder,4 Skred,3 Spell Pierce,4 Counterspell,1 Lose Focus,2 Breath Weapon,4 Lorien Revealed,2 Perilous Landscape,9 Snow-Covered Island,3 Snow-Covered Mountain,4 Volatile Fjord",
@@ -114,7 +114,7 @@
             "archetype": "Tempo",
             "list": "4 Faerie Seer,4 Augur of Bolas,4 Spellstutter Sprite,1 Dunland Crebain,1 Murmuring Mystic,3 Ninja of the Deep Hours,1 Thorn of the Black Rose,1 Gurmag Angler,2 Brainstorm,1 Ponder,2 Preordain,1 Spell Pierce,2 Agony Warp,2 Cast Down,4 Counterspell,1 Suffocating Fumes,4 Snuff Out,4 Lorien Revealed,1 Bojuka Bog,4 Contaminated Aquifer,2 Contaminated Landscape,1 Dimir Aqueduct,9 Island,1 Swamp",
             "strategy": "The strategy of Dimir Fairies centers around using evasive creatures and disruptive spells to control the board while applying pressure to opponents. This deck typically features a suite of low-cost flying creatures like *Faerie Miscreant* and *Spellstutter Sprite*, which can deal damage while also providing utility through their abilities. The synergy between these creatures and a variety of control spells, such as counterspells and removal, allows the deck to disrupt the opponent’s plans while maintaining a steady flow of threats. Key spells like *Counterspell* and *Spell Pierce* protect your board state and ensure you can respond to key threats. The ultimate goal is to leverage the combination of evasion and disruption to overwhelm opponents, creating a consistent stream of damage while keeping their game plan in check.",
-            "photo": "images/dimir-faries.jpeg",
+            "photo": "images/dimir-fairies.jpeg",
             "id": 12
         },
         {
