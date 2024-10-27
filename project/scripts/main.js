@@ -1,10 +1,15 @@
-//set up global variables
+//things that run on every page
+const navButton = document.getElementById("navButton");
+navButton.addEventListener("click", ()=> {
+    document.querySelector("nav").classList.toggle("open");
+});
 
 //page conditionals
 if(window.location.pathname == "/project/index.html" || window.location.pathname == "/project/") {
     getDeckLists("display");
+    document.getElementById("lastViewed").addEventListener("click", () => displayLastViewedList());
 } else if (window.location.pathname == "/project/deckList.html") {
-    getDeckLists("list")
+    getDeckLists("list");
 } else if (window.location.pathname == "/project/deckAdded.html") {
     displayAddedDeck();
 }
@@ -19,6 +24,51 @@ async function getDeckLists(action) {
     } else if (action == "list") {
         displayDeckList(data.decks);
     }
+}
+
+//Get card data
+async function useScryfallAPI(card) {
+    let cardParts = card.split(" ");
+    cardName = cardParts.filter((part) => {
+        return isNaN(part);
+    }).join("+");
+
+    let searchURL = `https://api.scryfall.com/cards/search?q=${cardName}`;
+    try {
+        let response = await fetch(searchURL);
+        let data = await response.json();
+        displayCardImage(data.data[0]);
+    } catch (error) {
+        console.error(error);
+    }
+
+}
+
+//display data
+function displayCardImage(card) {
+    const dialog = document.querySelector("dialog");
+    
+    //clear the dialog box of children elements
+    while (dialog.hasChildNodes()) {
+        dialog.removeChild(dialog.firstChild);
+    }
+
+    //make dialog element children
+    const cardImage = document.createElement("img");
+    const closeButton = document.createElement("button");
+
+    //populate the elements
+    cardImage.setAttribute("src", card.image_uris.normal);
+    cardImage.setAttribute("alt", card.oracle_text);
+    cardImage.setAttribute("loading", "lazy");
+
+    closeButton.innerText = "X";
+    closeButton.addEventListener("click", ()=> {
+        dialog.close();
+    });
+
+    dialog.append(cardImage, closeButton);
+    dialog.showModal();
 }
 
 //add in deck list tiles
@@ -51,6 +101,9 @@ function displayDeckList(decks) {
     let deckId = Number(window.location.href.split("=")[1]);
     let deckList = decks[deckId];
 
+    //add list to localstorage
+    window.localStorage.setItem("deckId", deckId);
+
     const main = document.querySelector("main");
     
     // create elements for the page
@@ -62,6 +115,7 @@ function displayDeckList(decks) {
     const strategyHeading = document.createElement("h3");
     const archetype = document.createElement("p");
     const strategy = document.createElement("p");
+    const cardModal = document.createElement("dialog");
 
     // fill the elements
     title.innerHTML = deckList.name;
@@ -78,6 +132,7 @@ function displayDeckList(decks) {
     cards.forEach(card => {
         const cardElement = document.createElement("li");
         cardElement.innerHTML = card;
+        cardElement.addEventListener("click", () => useScryfallAPI(card));
         list.appendChild(cardElement);
     });
 
@@ -86,7 +141,7 @@ function displayDeckList(decks) {
     strategy.innerHTML = deckList.strategy;
 
     // add all the elements to the page
-    main.append(title, format, img, deckListHeading, list, strategyHeading, archetype, strategy);
+    main.append(title, format, img, deckListHeading, list, strategyHeading, archetype, strategy, cardModal);
 }
 
 //load the recently added deck
@@ -102,6 +157,7 @@ function displayAddedDeck() {
     const strategyHeading = document.createElement("h3");
     const archetype = document.createElement("p");
     const strategy = document.createElement("p");
+    const cardModal = document.createElement("dialog");
     
     //fill up the elements
     title.innerHTML = deckInfo[0].split("=")[1];
@@ -120,5 +176,10 @@ function displayAddedDeck() {
     strategy.innerHTML = `Strategy: ${deckInfo[3].split("=")[1].replaceAll("+", " ")}`;
 
     //add elements to the page
-    main.append(title, format, deckListHeading, deckList, strategyHeading, archetype, strategy);
+    main.append(title, format, deckListHeading, deckList, strategyHeading, archetype, strategy, cardModal);
+}
+
+function displayLastViewedList() {
+    lastViewedId = window.localStorage.getItem("deckId");
+    window.location.href = `deckList.html?deck=${lastViewedId}`;
 }
