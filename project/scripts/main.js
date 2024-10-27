@@ -5,7 +5,7 @@ navButton.addEventListener("click", ()=> {
 });
 
 //page conditionals
-if(window.location.pathname == "/wdd231/project/index.html" || window.location.pathname == "/project/") {
+if(window.location.pathname == "/wdd231/project/index.html" || window.location.pathname == "/wdd231/project/") {
     getDeckLists("display");
     document.getElementById("lastViewed").addEventListener("click", () => displayLastViewedList());
 } else if (window.location.pathname == "/wdd231/project/deckList.html") {
