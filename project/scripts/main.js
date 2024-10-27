@@ -5,12 +5,12 @@ navButton.addEventListener("click", ()=> {
 });
 
 //page conditionals
-if(window.location.pathname == "/project/index.html" || window.location.pathname == "/project/") {
+if(window.location.pathname == "/wdd231/project/index.html" || window.location.pathname == "/project/") {
     getDeckLists("display");
     document.getElementById("lastViewed").addEventListener("click", () => displayLastViewedList());
-} else if (window.location.pathname == "/project/deckList.html") {
+} else if (window.location.pathname == "/wdd231/project/deckList.html") {
     getDeckLists("list");
-} else if (window.location.pathname == "/project/deckAdded.html") {
+} else if (window.location.pathname == "/wdd231/project/deckAdded.html") {
     displayAddedDeck();
 }
 //functions
